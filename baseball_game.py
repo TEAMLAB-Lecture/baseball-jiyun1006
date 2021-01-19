@@ -52,17 +52,22 @@ def get_strikes_or_ball(user_input_number, random_number):
                     strikes += 1
                 else:
                     ball += 1
-    return [strikes, ball]
+    return strikes, ball
     
 
 
 def is_yes(one_more_input):
     temp = one_more_input.lower()
-    if temp == 'y' or temp == 'yes':
-        return True
-    else:
-        return False
-    
+    while 1:
+        if temp == 'y' or temp == 'yes':
+            return True
+        elif temp == 'n' or temp == 'no':
+            return False
+        else:
+            print("Wrong Input, Input again")
+            temp = input("You win, one more(Y/N) ?")
+            
+
 
 
 def is_no(one_more_input):
@@ -77,46 +82,32 @@ def is_no(one_more_input):
 def main():
     print("Play Baseball")
     user_input = 999
-    random_number = str(get_not_duplicated_three_digit_number())
-    print("Random Number is : ", random_number)
-    # ===Modify codes below=============
-    # 위의 코드를 포함하여 자유로운 수정이 가능함
-    breaker = False
+    
     while 1:
-        user_input = input('Input guess number : ')
-        if is_validated_number(user_input):
-            [strikes, ball] = get_strikes_or_ball(user_input, random_number)
-            print(f"Strikes : {strikes} , Balls : {ball}")
-            if strikes == 3:
-                ans = input("You win, one more(Y/N) ?")
-                if is_yes(ans):
-                    main()
-                    breaker = True
-                    break
-                elif is_no(ans):
-                    break
-                else:
-                    print("Wrong Input, Input again")
-        
-        else:
-            print("Wrong Input, Input again")
+        random_number = str(get_not_duplicated_three_digit_number())
+        print("Random Number is : ", random_number)
+        breaker = False
+        while 1:
+            user_input = input('Input guess number : ')
+            if is_validated_number(user_input):
+                strikes, ball = get_strikes_or_ball(user_input, random_number)
+                print(f"Strikes : {strikes} , Balls : {ball}")
+                if strikes == 3:
+                    ans = input("You win, one more(Y/N) ?")
+                    if is_yes(ans):
+                        breaker = True
+                        break
+                    else:
+                        break
+
+            else:
+                print("Wrong Input, Input again")
+        if not breaker:
+            break
     if not breaker:
-    # ==================================
         print("Thank you for using this program")
         print("End of the Game")
 
 if __name__ == "__main__":
     main()
-
-
-# In[78]:
-
-
-is_yes('YEs')
-
-
-# In[ ]:
-
-
-
 
