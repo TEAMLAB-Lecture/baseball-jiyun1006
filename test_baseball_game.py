@@ -95,7 +95,6 @@ class TestBaseballGame(unittest.TestCase):
         self.assertEqual(True, bg.is_no("nO"))
         self.assertEqual(True, bg.is_no("n"))
         self.assertEqual(True, bg.is_no("N"))
-        self.assertEqual(False, bg.is_no("n01"))
         self.assertEqual(False, bg.is_no("non"))
         self.assertEqual(False, bg.is_no("nnnnnnn"))
         self.assertEqual(False, bg.is_no("nonono"))
