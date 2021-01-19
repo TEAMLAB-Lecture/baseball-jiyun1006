@@ -52,7 +52,7 @@ def get_strikes_or_ball(user_input_number, random_number):
                     strikes += 1
                 else:
                     ball += 1
-    return strikes, ball
+    return [strikes, ball]
     
 
 
@@ -85,7 +85,7 @@ def main():
     while 1:
         user_input = input('Input guess number : ')
         if is_validated_number(user_input):
-            strikes, ball = get_strikes_or_ball(user_input, random_number)
+            [strikes, ball] = get_strikes_or_ball(user_input, random_number)
             print(f"Strikes : {strikes} , Balls : {ball}")
             if strikes == 3:
                 ans = input("You win, one more(Y/N) ?")
