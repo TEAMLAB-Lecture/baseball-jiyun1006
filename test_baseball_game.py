@@ -94,10 +94,8 @@ class TestBaseballGame(unittest.TestCase):
         self.assertEqual(True, bg.is_no("nO"))
         self.assertEqual(True, bg.is_no("n"))
         self.assertEqual(True, bg.is_no("N"))
-        
-        
-        
-        
+
+  
 
     def test_main(self):
         for x in range(2000):
@@ -193,7 +191,8 @@ class TestBaseballGame(unittest.TestCase):
                             self.assertIn(
                                 "End of the Game".upper(), console[i + 3].upper())
 
-def is_no(self, one_more_input):
+
+    def is_no(self, one_more_input):
         if one_more_input.upper() == 'NO':
             return True
         if one_more_input.upper() == 'N':
