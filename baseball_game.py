@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[139]:
 
 
 import random
@@ -71,11 +71,15 @@ def is_yes(one_more_input):
 
 
 def is_no(one_more_input):
-    temp = one_more_input.lower()
-    if temp == 'n' or temp == 'no':
-        return True
-    else:
-        return False
+    while 1:
+        temp = one_more_input.lower()
+        if temp == 'n' or temp == 'no':
+            return True
+        elif temp == 'y' or temp == 'yes':
+            return False
+        else:
+            print("Wrong Input, Input again")
+            one_more_input = input("You win, one more(Y/N) ?")
     
 
 
@@ -94,10 +98,10 @@ def main():
                 print(f"Strikes : {strikes} , Balls : {ball}")
                 if strikes == 3:
                     ans = input("You win, one more(Y/N) ?")
-                    if is_yes(ans):
-                        breaker = True
+                    if is_no(ans):
                         break
                     else:
+                        breaker = True
                         break
 
             else:
