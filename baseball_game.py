@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[98]:
+# In[ ]:
 
 
 import random
@@ -97,11 +97,9 @@ def main():
                     break
                 else:
                     print("Wrong Input, Input again")
-            print("a")
         
         else:
             print("Wrong Input, Input again")
-        print("b")
     if not breaker:
     # ==================================
         print("Thank you for using this program")
