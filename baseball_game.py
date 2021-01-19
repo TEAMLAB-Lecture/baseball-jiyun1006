@@ -57,15 +57,15 @@ def get_strikes_or_ball(user_input_number, random_number):
 
 
 def is_yes(one_more_input):
-    temp = one_more_input.lower()
     while 1:
+        temp = one_more_input.lower()
         if temp == 'y' or temp == 'yes':
             return True
         elif temp == 'n' or temp == 'no':
             return False
         else:
             print("Wrong Input, Input again")
-            temp = input("You win, one more(Y/N) ?")
+            one_more_input = input("You win, one more(Y/N) ?")
             
 
 
@@ -104,9 +104,9 @@ def main():
                 print("Wrong Input, Input again")
         if not breaker:
             break
-    if not breaker:
-        print("Thank you for using this program")
-        print("End of the Game")
+    
+    print("Thank you for using this program")
+    print("End of the Game")
 
 if __name__ == "__main__":
     main()
