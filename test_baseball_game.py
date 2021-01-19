@@ -201,33 +201,33 @@ class TestBaseballGame(unittest.TestCase):
                                 "End of the Game".upper(), console[i + 3].upper())
 
 
-#     def is_no(self, one_more_input):
-#         if one_more_input.upper() == 'NO':
-#             return True
-#         if one_more_input.upper() == 'N':
-#             return True
-#         return False
+    def is_no(self, one_more_input):
+        if one_more_input.upper() == 'NO':
+            return True
+        if one_more_input.upper() == 'N':
+            return True
+        return False
 
 
-#     def is_duplicated_number(self, three_digit):
-#         for number in three_digit:
-#             if three_digit.count(number) > 1:
-#                 return True
-#         return False
+    def is_duplicated_number(self, three_digit):
+        for number in three_digit:
+            if three_digit.count(number) > 1:
+                return True
+        return False
 
-#     def get_strikes_or_ball(self, user_input_number, random_number):
-#         result = []
-#         if random_number == user_input_number:
-#             result = [3, 0]
+    def get_strikes_or_ball(self, user_input_number, random_number):
+        result = []
+        if random_number == user_input_number:
+            result = [3, 0]
 
-#         strikes = 0
-#         ball = 0
+        strikes = 0
+        ball = 0
 
-#         for number in user_input_number:
-#             if (number in random_number):
-#                 if user_input_number.index(number) is random_number.index(number):
-#                     strikes += 1
-#                 else:
-#                     ball += 1
-#         result = [strikes, ball]
-#         return result
+        for number in user_input_number:
+            if (number in random_number):
+                if user_input_number.index(number) is random_number.index(number):
+                    strikes += 1
+                else:
+                    ball += 1
+        result = [strikes, ball]
+        return result
